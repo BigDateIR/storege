@@ -1,0 +1,32 @@
+[
+    {
+        "tweet_id": "12345",
+        "text": "What a wonderful day! #sunshine #happy",
+        "hashtags": ["sunshine", "happy"],
+        "timestamp": "2024-12-24T10:00:00Z",
+        "location": {
+            "lat": 40.730610,
+            "lon": -73.935242
+        },
+        "sentiment": "Positive",
+        "user": {
+            "user_id": "67890",
+            "name": "John Doe"
+        }
+    },
+    {
+        "tweet_id": "12346",
+        "text": "Learning Elasticsearch is fun! #coding #elasticsearch",
+        "hashtags": ["coding", "elasticsearch"],
+        "timestamp": "2024-12-25T15:00:00Z",
+        "location": {
+            "lat": 37.774929,
+            "lon": -122.419416
+        },
+        "sentiment": "Neutral",
+        "user": {
+            "user_id": "67891",
+            "name": "Jane Smith"
+        }
+    }
+]
