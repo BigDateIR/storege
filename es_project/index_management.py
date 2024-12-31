@@ -6,7 +6,12 @@ def create_index(es, index_name="tweets"):
                 "text": {"type": "text"},
                 "hashtags": {"type": "keyword"},
                 "timestamp": {"type": "date"},
-                "location": {"type": "geo_point"},
+                "location": {
+                    "properties": {
+                        "latitude": {"type": "double"},
+                        "longitude": {"type": "double"}
+                    }
+                },
                 "sentiment": {"type": "keyword"},
                 "user": {
                     "properties": {
