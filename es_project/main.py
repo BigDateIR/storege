@@ -1,22 +1,24 @@
 from connection import get_connection
 from index_management import create_index
 from data_ingestion import consume_from_kafka
-from queries import search_tweets, geo_search, sentiment_search
 
 def main():
-
     es = get_connection()
     index_name = "tweets"
 
-    topic_name_tweets = "tweets-topic"
+    topic_name_tweets = "send_consumer_data"
     bootstrap_servers = ["localhost:9092"]
 
     if not es.indices.exists(index=index_name):
         create_index(es, index_name)
 
-    print("Consuming data from Kafka...")
+    print("Consuming data from Kafka and saving to JSON...")
     consume_from_kafka(es, index_name, topic_name_tweets, bootstrap_servers)
 
+if __name__ == "__main__":
+    main()
+
+"""
     while True:
         print("\nSelect an option:")
         print("1. Search by text")
@@ -49,6 +51,5 @@ def main():
 
         else:
             print("Invalid choice. Please try again.")
+            """
 
-if __name__ == "__main__":
-    main()
