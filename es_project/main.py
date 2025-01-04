@@ -4,15 +4,16 @@ from data_ingestion import consume_from_kafka
 
 def main():
     es = get_connection()
-    index_name = "tweets"
+    index_name = "tweetsone"
 
     topic_name_tweets = "send_consumer_data"
     bootstrap_servers = ["localhost:9092"]
 
+    # Ensure the index exists
     if not es.indices.exists(index=index_name):
         create_index(es, index_name)
 
-    print("Consuming data from Kafka and saving to JSON...")
+    print("Starting Kafka consumer...")
     consume_from_kafka(es, index_name, topic_name_tweets, bootstrap_servers)
 
 if __name__ == "__main__":

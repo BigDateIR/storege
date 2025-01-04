@@ -3,14 +3,14 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.10.0
     container_name: elasticsearch
     ports:
-      - "9200:9200"  # REST API
-      - "9300:9300"  # Transport API
+      - "9200:9200"
+      - "9300:9300"
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false  
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:8.9.2  # استخدام إصدار مدعوم
+    image: docker.elastic.co/kibana/kibana:8.9.2
     container_name: kibana
     ports:
       - "5601:5601"

@@ -1,4 +1,4 @@
-def create_index(es, index_name="tweets"):
+def create_index(es, index_name="tweetsone"):
     settings = {
         "mappings": {
             "properties": {
